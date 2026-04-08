@@ -3,7 +3,7 @@
 // ============================================
 const CONFIG = {
   APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbz6sItVxwj9Av_8APvipL_YMH_NRNf3boVtd1c0rA9aTfLwJVSyPTUeM8u-Z7_DJGl7KQ/exec',
-  ADMIN_CODE: '27062368aksilit',
+  ADMIN_CODE: '27062368',
   STORAGE_KEYS: {
     AUTH: 'akso_auth',
     NEWS: 'akso_news',
