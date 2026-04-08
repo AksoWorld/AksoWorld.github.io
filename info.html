@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>О сервере — AKSO WORLD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="bg-animation"></div>
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <i class="fas fa-cube"></i>
+      <span>AKSO<span class="logo-accent">WORLD</span></span>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Главная</a></li>
+      <li><a href="info.html" class="nav-link active"><i class="fas fa-info-circle"></i> Сервер</a></li>
+      <li><a href="news.html" class="nav-link"><i class="fas fa-newspaper"></i> Новости</a></li>
+      <li><a href="contacts.html" class="nav-link"><i class="fas fa-users"></i> Контакты</a></li>
+      <li><a href="application.html" class="nav-btn"><i class="fas fa-paper-plane"></i> Заявка</a></li>
+    </ul>
+    <div class="nav-toggle" id="navToggle">
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+  <div class="container">
+    <span class="section-badge"><i class="fas fa-crown"></i> О сервере</span>
+    <h1 class="page-title">Что такое <span class="gradient-text">Akso World</span>?</h1>
+    <p class="page-description">Уютный выживальный сервер с акцентом на сообщество и уникальным геймплеем</p>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+  <div class="container">
+    <div class="features-grid">
+      <div class="feature-card" onclick="openFeatureModal('vanilla')">
+        <div class="feature-icon"><i class="fas fa-dragon"></i></div>
+        <h3>Выживание Vanilla+</h3>
+        <p>Классическое выживание с расширенным геймплеем, кастомными крафтами и уникальными механиками.</p>
+        <div class="feature-card-hint"><i class="fas fa-arrow-right"></i> Подробнее</div>
+      </div>
+      <div class="feature-card" onclick="openFeatureModal('ranks')">
+        <div class="feature-icon"><i class="fas fa-trophy"></i></div>
+        <h3>Ранги и привилегии</h3>
+        <p>Активность на сервере приносит игровые привилегии. Заработай ранг честным путём — никакого доната!</p>
+        <div class="feature-card-hint"><i class="fas fa-arrow-right"></i> Подробнее</div>
+      </div>
+      <div class="feature-card" onclick="openFeatureModal('world')">
+        <div class="feature-icon"><i class="fas fa-globe-americas"></i></div>
+        <h3>Огромный мир</h3>
+        <p>Карта 6,000 x 6,000 блоков, с кастомизированными структурами и уникальным ландшафтом.</p>
+        <div class="feature-card-hint"><i class="fas fa-arrow-right"></i> Подробнее</div>
+      </div>
+      <div class="feature-card" onclick="openFeatureModal('anticheat')">
+        <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+        <h3>Античит и защита</h3>
+        <p>Мощная система логирования, откат гриферства и продвинутый античит. Твои постройки в безопасности!</p>
+        <div class="feature-card-hint"><i class="fas fa-arrow-right"></i> Подробнее</div>
+      </div>
+      <div class="feature-card" onclick="openFeatureModal('build')">
+        <div class="feature-icon"><i class="fas fa-box"></i></div>
+        <h3>Сборка сервера</h3>
+        <p>Быстро и просто!</p>
+        <div class="feature-card-hint"><i class="fas fa-arrow-right"></i> Подробнее</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE MODAL -->
+<div class="feature-modal-overlay" id="featureModalOverlay" onclick="closeFeatureModal()">
+  <div class="feature-modal" id="featureModal" onclick="event.stopPropagation()">
+    <button class="feature-modal-close" onclick="closeFeatureModal()"><i class="fas fa-times"></i></button>
+    <div class="feature-modal-icon" id="fmIcon"></div>
+    <h2 class="feature-modal-title" id="fmTitle"></h2>
+    <div class="feature-modal-body" id="fmBody"></div>
+  </div>
+</div>
+
+<!-- DETAILS -->
+<section class="details">
+  <div class="container">
+    <div class="details-grid">
+      <div class="detail-item">
+        <i class="fas fa-users"></i>
+        <div>
+          <h4>Дружное комьюнити</h4>
+          <p>Более 20 активных игроков, регулярные ивенты и события от них.</p>
+        </div>
+      </div>
+      <div class="detail-item">
+        <i class="fas fa-book-open"></i> 
+        <div>
+          <h4>События и лор</h4>
+          <p>Уникальная и продуманная история сервера и реализация идей игроков нашего сервера.</p>
+        </div>
+      </div>
+      <div class="detail-item">
+        <i class="fas fa-server"></i>
+        <div>
+          <h4>Стабильный хостинг</h4>
+          <p>Мощный выделенный сервер, 99.9% аптайм, защита от DDoS</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <i class="fas fa-cube"></i> AKSO<span>WORLD</span>
+    </div>
+    <div class="footer-copyright">
+      © 2023-2026 Akso World. Не официальный продукт Mojang.
+    </div>
+    <div class="footer-social" id="footerSocial"></div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+const FEATURE_DATA = {
+  vanilla: {
+    icon: '<i class="fas fa-dragon"></i>',
+    title: 'Vanilla+ — классика с удобствами',
+    body: `
+      <p>Akso World — это классическое выживание, которое мы расширили удобными механиками, не ломая ванильного ощущения.</p>
+      <p style="margin-bottom:0.75rem;font-weight:600;color:var(--accent);">Что есть на нашем сервере:</p>
+      <ul class="fm-list">
+        <li><i class="fas fa-eye-slash"></i><span><strong>Невидимые рамки</strong> — вешайте предметы в рамку и с помощью ножниц делайте её невидимой</span></li>
+        <li><i class="fas fa-person"></i><span><strong>Armor Poser</strong> — настрой позу стойки зажатым шифтом. Руки, ноги, голова</span></li>
+        <li><i class="fas fa-lightbulb"></i><span><strong>Невидимый свет</strong> — в верстаке положите факел в центр и обведите его жёлтыми стеклянными панелями</span></li>
+        <li><i class="fas fa-book"></i><span><strong>Уникальный ЛОР</strong> — уникальная и продуманная история сервера</span></li>
+        <li><i class="fas fa-random"></i><span><strong>Рандомный спавн</strong> — при первом появлении и после смерти ты появляешься в любой части мира; приоритет — кровать и якорь возрождения ⛰</span></li>
+        <li><i class="fas fa-map-marker-alt"></i><span><strong>Неправильные координаты</strong> — вам кажется, что друг рядом, но он на другой части сервера</span></li>
+        <li><i class="fas fa-search"></i><span><strong>Кисточка Детектив</strong> — совместив кисточку и светящийся мешочек, можно найти того, кто лазил по твоим сундукам</span></li>
+        <li><i class="fas fa-microphone"></i><span><strong>Войс чат</strong> — общайся прямо в Minecraft</span></li>
+      </ul>
+      <div class="fm-note"><i class="fas fa-info-circle"></i> Версия сервера актуальна и поддерживает последние клиенты</div>
+    `
+  },
+  ranks: {
+    icon: '<i class="fas fa-trophy"></i>',
+    title: 'Привилегии',
+    body: `
+      <p>Привилегии — это круто! На Akso World нет платных рангов: всё зарабатывается честной игрой.</p>
+      <ul class="fm-list">
+        <li><i class="fas fa-star"></i><span><strong>Ежемесячный топ</strong> — три самых активных и продуктивных игрока получают бесплатную проходку на следующий месяц</span></li>
+        <li><i class="fas fa-shuffle"></i><span><strong>Честное соревнование</strong> — одни и те же игроки не могут побеждать два месяца подряд (не считая первого места)</span></li>
+      </ul>
+      <div class="fm-note"><i class="fas fa-ban"></i> Донат не даёт игровых преимуществ — только активность решает!</div>
+    `
+  },
+  world: {
+    icon: '<i class="fas fa-globe-americas"></i>',
+    title: 'Огромный мир',
+    body: `
+      <p>Мир Akso World создан с любовью к деталям. Каждый уголок карты уникален — здесь есть что исследовать.</p>
+      <ul class="fm-list">
+        <li><i class="fas fa-map"></i><span><strong>6 000 × 6 000 блоков</strong> — не бесконечность, но ты в неё не упрёшься</span></li>
+        <li><i class="fas fa-mountain"></i><span><strong>Все биомы в одном мире</strong> — от тундры до саванны</span></li>
+        <li><i class="fas fa-home"></i><span><strong>Места хватит всем</strong> — территория большая, а игроков не тысяча</span></li>
+        <li><i class="fas fa-dungeon"></i><span><strong>Кастомные структуры</strong> — вместо скучных ванильных структур, новые и интересные</span></li>
+      </ul>
+      <div class="fm-note"><i class="fas fa-sync"></i> Мир периодически обновляется и расширяется с новыми зонами</div>
+    `
+  },
+  anticheat: {
+    icon: '<i class="fas fa-shield-alt"></i>',
+    title: 'Античит и защита',
+    body: `
+      <p>Безопасность твоих построек и честная игра — наш приоритет.</p>
+      <ul class="fm-list">
+        <li><i class="fas fa-shield-alt"></i><span><strong>Античит в наличии</strong> — если какой-то негодяй или читер будет баловаться на сервере, то всё закончится хорошо</span></li>
+      </ul>
+      <div class="fm-note"><i class="fas fa-headset"></i> Заметил нарушителя? Сообщи в поддержке — разберёмся!</div>
+    `
+  },
+  build: {
+    icon: '<i class="fas fa-box"></i>',
+    title: 'Сборка сервера',
+    body: `
+      <p><strong>Быстро и просто!</strong> Добавь в свою сборку всего два мода:</p>
+      <ul class="fm-list">
+        <li><i class="fas fa-download"></i><span><strong>Авто мод пак</strong> — <a href="https://modrinth.com/mod/automodpack/version/otdTMsQw" target="_blank" style="color:var(--accent)">modrinth.com/mod/automodpack</a></span></li>
+        <li><i class="fas fa-microphone"></i><span><strong>Войс мод</strong> — <a href="https://modrinth.com/plugin/simple-voice-chat" target="_blank" style="color:var(--accent)">modrinth.com/plugin/simple-voice-chat</a></span></li>
+      </ul>
+      <div class="fm-note"><i class="fas fa-info-circle"></i> Убедись, что все установлено на ту версию сервера</div>
+    `
+  }
+};
+
+function openFeatureModal(key) {
+  const data = FEATURE_DATA[key];
+  if (!data) return;
+  document.getElementById('fmIcon').innerHTML = data.icon;
+  document.getElementById('fmTitle').textContent = data.title;
+  document.getElementById('fmBody').innerHTML = data.body;
+  const overlay = document.getElementById('featureModalOverlay');
+  overlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeFeatureModal() {
+  document.getElementById('featureModalOverlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeFeatureModal(); });
+</script>
+</body>
+</html>

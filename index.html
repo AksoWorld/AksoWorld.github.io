@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AKSO WORLD — Minecraft Server</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="bg-animation"></div>
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <i class="fas fa-cube"></i>
+      <span>AKSO<span class="logo-accent">WORLD</span></span>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="index.html" class="nav-link active"><i class="fas fa-home"></i> Главная</a></li>
+      <li><a href="info.html" class="nav-link"><i class="fas fa-info-circle"></i> Сервер</a></li>
+      <li><a href="news.html" class="nav-link"><i class="fas fa-newspaper"></i> Новости</a></li>
+      <li><a href="contacts.html" class="nav-link"><i class="fas fa-users"></i> Контакты</a></li>
+      <li><a href="application.html" class="nav-btn"><i class="fas fa-paper-plane"></i> Заявка</a></li>
+    </ul>
+    <div class="nav-toggle" id="navToggle">
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="pulse-dot"></span>
+      <span id="serverStatusText">Сервер онлайн</span>
+    </div>
+    
+    <h1 class="hero-title">
+      <span class="glitch-text" data-text="AKSO">AKSO</span>
+    </h1>
+    <div class="hero-subtitle">WORLD</div>
+    
+    <p class="hero-description">
+      Уникальный Minecraft-сервер с дружелюбным сообществом<br>
+      и захватывающим геймплеем
+    </p>
+    
+    <div class="ip-box" id="ipBox">
+      <div class="ip-info">
+        <span class="ip-label"><i class="fas fa-network-wired"></i> IP-адрес</span>
+        <span class="ip-value" id="serverIP">aksoworldii.joinserver.xyz</span>
+      </div>
+      <button class="ip-copy-btn" id="copyIPBtn">
+        <i class="fas fa-copy"></i> Копировать
+      </button>
+      <span class="copy-toast" id="copyToast">Скопировано!</span>
+    </div>
+    
+    <div class="stats-grid" id="statsGrid">
+      <div class="stat-card">
+        <div class="stat-value" id="statVersion">1.21.4</div>
+        <div class="stat-label"><i class="fas fa-code-branch"></i> <span id="statVersionLabel">Версия</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="statMode">Vanilla+</div>
+        <div class="stat-label"><i class="fas fa-gamepad"></i> <span id="statModeLabel">Режим</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="statOnline">24/7</div>
+        <div class="stat-label"><i class="fas fa-clock"></i> <span id="statOnlineLabel">Онлайн</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="statTest">1 неделя</div>
+        <div class="stat-label"><i class="fas fa-calendar"></i> <span id="statTestLabel">Тест-драйв</span></div>
+      </div>
+    </div>
+    
+    <div class="hero-buttons">
+      <a href="application.html" class="btn btn-primary btn-lg">
+        <i class="fas fa-paper-plane"></i> Подать заявку
+      </a>
+      <a href="info.html" class="btn btn-outline btn-lg">
+        <i class="fas fa-info-circle"></i> Подробнее
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <i class="fas fa-cube"></i> AKSO<span>WORLD</span>
+    </div>
+    <div class="footer-copyright">
+      © 2023-2026 Akso World. Не официальный продукт Mojang.
+    </div>
+    <div class="footer-social" id="footerSocial"></div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

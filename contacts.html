@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Контакты — AKSO WORLD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="bg-animation"></div>
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <i class="fas fa-cube"></i>
+      <span>AKSO<span class="logo-accent">WORLD</span></span>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Главная</a></li>
+      <li><a href="info.html" class="nav-link"><i class="fas fa-info-circle"></i> Сервер</a></li>
+      <li><a href="news.html" class="nav-link"><i class="fas fa-newspaper"></i> Новости</a></li>
+      <li><a href="contacts.html" class="nav-link active"><i class="fas fa-users"></i> Контакты</a></li>
+      <li><a href="application.html" class="nav-btn"><i class="fas fa-paper-plane"></i> Заявка</a></li>
+    </ul>
+    <div class="nav-toggle" id="navToggle">
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+  <div class="container">
+    <span class="section-badge"><i class="fas fa-users"></i> Сообщество</span>
+    <h1 class="page-title">Наши <span class="gradient-text">контакты</span></h1>
+    <p class="page-description">Присоединяйся — анонсы, чат и поддержка в реальном времени</p>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section class="contacts-section">
+  <div class="container">
+    <div class="contacts-grid" id="contactsGrid"></div>
+  </div>
+</section>
+
+<!-- SUPPORT FORM -->
+<section class="support-section">
+  <div class="container">
+    <div class="form-container">
+      <div class="form-header">
+        <i class="fas fa-headset"></i>
+        <span>Поддержка</span>
+      </div>
+      
+      <form id="supportForm" class="support-form">
+        <div class="form-row-2">
+          <div class="form-group">
+            <label>Ваш ник / Discord</label>
+            <input type="text" id="supportContact" placeholder="Как с вами связаться" required>
+          </div>
+          <div class="form-group">
+            <label>Тема</label>
+            <select id="supportTopic">
+              <option>Техническая проблема</option>
+              <option>Жалоба на игрока</option>
+              <option>Предложение</option>
+              <option>Вопрос</option>
+              <option>Другое</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label>Сообщение</label>
+          <textarea id="supportMessage" rows="4" placeholder="Опишите проблему или вопрос..." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label><i class="fas fa-camera"></i> Скриншоты (до 3)</label>
+          <div class="photo-upload-area" id="supportPhotoUpload">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <span>Нажмите или перетащите</span>
+            <small>Можно прикрепить скриншоты</small>
+          </div>
+          <input type="file" id="supportPhotoInput" accept="image/*" multiple style="display:none;">
+          <div class="photo-preview-grid" id="supportPhotoPreview"></div>
+        </div>
+        
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">
+            <i class="fas fa-paper-plane"></i> Отправить
+          </button>
+          <div class="form-message" id="supportMsg"></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <i class="fas fa-cube"></i> AKSO<span>WORLD</span>
+    </div>
+    <div class="footer-copyright">
+      © 2023-2026 Akso World. Не официальный продукт Mojang.
+    </div>
+    <div class="footer-social" id="footerSocial"></div>
+  </div>
+</footer>
+
+
+
+<script src="js/main.js"></script>
+</body>
+</html>

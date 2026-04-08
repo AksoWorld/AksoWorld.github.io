@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Новости — AKSO WORLD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="bg-animation"></div>
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <i class="fas fa-cube"></i>
+      <span>AKSO<span class="logo-accent">WORLD</span></span>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Главная</a></li>
+      <li><a href="info.html" class="nav-link"><i class="fas fa-info-circle"></i> Сервер</a></li>
+      <li><a href="news.html" class="nav-link active"><i class="fas fa-newspaper"></i> Новости</a></li>
+      <li><a href="contacts.html" class="nav-link"><i class="fas fa-users"></i> Контакты</a></li>
+      <li><a href="application.html" class="nav-btn"><i class="fas fa-paper-plane"></i> Заявка</a></li>
+    </ul>
+    <div class="nav-toggle" id="navToggle">
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+  <div class="container">
+    <span class="section-badge"><i class="fas fa-newspaper"></i> Новости</span>
+    <h1 class="page-title">Последние <span class="gradient-text">обновления</span></h1>
+    <p class="page-description">Следи за жизнью сервера — ивенты, патчи, анонсы</p>
+  </div>
+</section>
+
+<!-- NEWS SECTION -->
+<section class="news-section">
+  <div class="container">
+    <!-- FILTERS -->
+    <div class="news-filters">
+      <button class="filter-btn active" data-filter="all">Все</button>
+      <button class="filter-btn" data-filter="update">Обновления</button>
+      <button class="filter-btn" data-filter="patch">Исправления</button>
+      <button class="filter-btn" data-filter="event">Ивенты</button>
+    </div>
+    
+    <!-- NEWS CONTAINER -->
+    <div class="news-container" id="newsContainer">
+      <div class="loading-placeholder">Загрузка новостей...</div>
+    </div>
+  </div>
+</section>
+
+<!-- ADMIN PANEL -->
+<div class="admin-panel" id="adminPanel">
+  <div class="admin-panel-header">
+    <h2><i class="fas fa-crown"></i> Панель управления</h2>
+    <button class="admin-panel-close" id="adminPanelClose"><i class="fas fa-times"></i></button>
+  </div>
+  
+  <div class="admin-tabs">
+    <button class="admin-tab active" data-tab="news"><i class="fas fa-newspaper"></i> Новости</button>
+    <button class="admin-tab" data-tab="design"><i class="fas fa-palette"></i> Дизайн</button>
+    <button class="admin-tab" data-tab="stats"><i class="fas fa-chart-bar"></i> Статистика</button>
+    <button class="admin-tab" data-tab="links"><i class="fas fa-link"></i> Ссылки</button>
+    <button class="admin-tab" data-tab="server"><i class="fas fa-server"></i> Сервер</button>
+  </div>
+  
+  <!-- TAB: NEWS -->
+  <div class="admin-tab-content active" id="tab-news">
+    <h3>Добавить новость</h3>
+    <div class="admin-form">
+      <div class="form-row-3">
+        <div class="form-group">
+          <label>Заголовок</label>
+          <input type="text" id="newsTitle" placeholder="Название">
+        </div>
+        <div class="form-group">
+          <label>Тег</label>
+          <select id="newsTag">
+            <option value="update">Обновление</option>
+            <option value="patch">Патч</option>
+            <option value="event">Ивент</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Дата</label>
+          <input type="date" id="newsDate">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Текст</label>
+        <textarea id="newsBody" rows="4" placeholder="Содержание новости..."></textarea>
+      </div>
+      <div class="form-group">
+        <label>Фото (до 3)</label>
+        <div class="photo-upload-area" id="newsPhotoUpload">
+          <i class="fas fa-cloud-upload-alt"></i>
+          <span>Нажмите или перетащите</span>
+        </div>
+        <input type="file" id="newsPhotoInput" accept="image/*" multiple style="display:none;">
+        <div class="photo-preview-grid" id="newsPhotoPreview"></div>
+      </div>
+      <button class="btn btn-primary" id="addNewsBtn">
+        <i class="fas fa-plus"></i> Опубликовать
+      </button>
+    </div>
+    
+    <h3 style="margin-top: 30px;">Управление новостями</h3>
+    <div class="news-manage-list" id="newsManageList"></div>
+  </div>
+  
+  <!-- TAB: DESIGN -->
+  <div class="admin-tab-content" id="tab-design">
+    <h3>Настройки дизайна</h3>
+    <div class="admin-form">
+      <div class="form-group">
+        <label>Акцентный цвет</label>
+        <input type="color" id="accentColor" value="#00f5a0">
+      </div>
+      <div class="form-group">
+        <label>Вторичный цвет</label>
+        <input type="color" id="secondaryColor" value="#00d4ff">
+      </div>
+      <button class="btn btn-primary" id="applyDesignBtn">
+        <i class="fas fa-check"></i> Применить
+      </button>
+    </div>
+  </div>
+  
+  <!-- TAB: STATS -->
+  <div class="admin-tab-content" id="tab-stats">
+    <h3>Статистика на главной</h3>
+    <div class="admin-form">
+      <div class="stats-edit-grid">
+        <div class="stat-edit-item">
+          <label>Версия</label>
+          <input type="text" id="editVersion" placeholder="1.21.4">
+          <input type="text" id="editVersionLabel" placeholder="Подпись">
+        </div>
+        <div class="stat-edit-item">
+          <label>Режим</label>
+          <input type="text" id="editMode" placeholder="Vanilla+">
+          <input type="text" id="editModeLabel" placeholder="Подпись">
+        </div>
+        <div class="stat-edit-item">
+          <label>Онлайн</label>
+          <input type="text" id="editOnline" placeholder="24/7">
+          <input type="text" id="editOnlineLabel" placeholder="Подпись">
+        </div>
+        <div class="stat-edit-item">
+          <label>Тест-драйв</label>
+          <input type="text" id="editTest" placeholder="1 неделя">
+          <input type="text" id="editTestLabel" placeholder="Подпись">
+        </div>
+      </div>
+      <button class="btn btn-primary" id="saveStatsBtn">
+        <i class="fas fa-save"></i> Сохранить
+      </button>
+    </div>
+  </div>
+  
+  <!-- TAB: LINKS -->
+  <div class="admin-tab-content" id="tab-links">
+    <h3>Социальные сети</h3>
+    <div class="admin-form">
+      <div class="form-group">
+        <label><i class="fab fa-discord"></i> Discord</label>
+        <input type="text" id="editDiscord" placeholder="https://discord.gg/...">
+      </div>
+      <div class="form-group">
+        <label><i class="fab fa-telegram"></i> Telegram</label>
+        <input type="text" id="editTelegram" placeholder="https://t.me/...">
+      </div>
+      <div class="form-group">
+        <label><i class="fas fa-heart"></i> Boosty</label>
+        <input type="text" id="editBoosty" placeholder="https://boosty.to/...">
+      </div>
+      <button class="btn btn-primary" id="saveLinksBtn">
+        <i class="fas fa-save"></i> Сохранить
+      </button>
+    </div>
+  </div>
+  
+  <!-- TAB: SERVER -->
+  <div class="admin-tab-content" id="tab-server">
+    <h3>Настройки сервера</h3>
+    <div class="admin-form">
+      <div class="form-group">
+        <label><i class="fas fa-network-wired"></i> IP-адрес</label>
+        <input type="text" id="editServerIP" placeholder="aksoworldii.joinserver.xyz">
+      </div>
+      <div class="form-group">
+        <label><i class="fas fa-circle"></i> Статус</label>
+        <input type="text" id="editServerStatus" placeholder="Сервер онлайн">
+      </div>
+      <button class="btn btn-primary" id="saveServerBtn">
+        <i class="fas fa-save"></i> Сохранить
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <i class="fas fa-cube"></i> AKSO<span>WORLD</span>
+    </div>
+    <div class="footer-copyright">
+      © 2023-2026 Akso World. Не официальный продукт Mojang.
+    </div>
+    <div class="footer-social" id="footerSocial"></div>
+  </div>
+</footer>
+
+<!-- ADMIN BUTTON -->
+<button class="admin-fab" id="adminFab" style="display: none;">
+  <i class="fas fa-cog"></i>
+</button>
+
+<script src="js/main.js"></script>
+</body>
+</html>

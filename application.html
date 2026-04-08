@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Заявка — AKSO WORLD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="bg-animation"></div>
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <i class="fas fa-cube"></i>
+      <span>AKSO<span class="logo-accent">WORLD</span></span>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Главная</a></li>
+      <li><a href="info.html" class="nav-link"><i class="fas fa-info-circle"></i> Сервер</a></li>
+      <li><a href="news.html" class="nav-link"><i class="fas fa-newspaper"></i> Новости</a></li>
+      <li><a href="contacts.html" class="nav-link"><i class="fas fa-users"></i> Контакты</a></li>
+      <li><a href="application.html" class="nav-btn active"><i class="fas fa-paper-plane"></i> Заявка</a></li>
+    </ul>
+    <div class="nav-toggle" id="navToggle">
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+  <div class="container">
+    <span class="section-badge"><i class="fas fa-pen-fancy"></i> Вступление</span>
+    <h1 class="page-title">Заявка на <span class="gradient-text">вайтлист</span></h1>
+    <p class="page-description">Заполни анкету честно. Мы рассматриваем каждую заявку индивидуально</p>
+  </div>
+</section>
+
+<!-- APPLICATION FORM -->
+<section class="form-section">
+  <div class="container">
+    <div class="form-container">
+      <div class="form-header">
+        <i class="fas fa-user-plus"></i>
+        <span>Анкета игрока</span>
+      </div>
+      
+      <form id="applicationForm" class="application-form">
+        <div class="form-row-2">
+          <div class="form-group">
+            <label><i class="fas fa-gamepad"></i> Ник в Minecraft *</label>
+            <input type="text" id="appNick" placeholder="aksilit" maxlength="16" required>
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-calendar-alt"></i> Возраст *</label>
+            <input type="number" id="appAge" placeholder="15+" min="12" max="99" required>
+          </div>
+        </div>
+        
+        <div class="form-row-2">
+          <div class="form-group">
+            <label><i class="fab fa-discord"></i> Discord *</label>
+            <input type="text" id="appDiscord" placeholder="username" required>
+          </div>
+          <div class="form-group">
+            <label><i class="fab fa-telegram"></i> Telegram *</label>
+            <input type="text" id="appTelegram" placeholder="@username" required>
+          </div>
+        
+          <div class="form-group">
+            <label><i class="fas fa-search"></i> Откуда узнали? *</label>
+            <select id="appSource" required>
+              <option value="">Выберите</option>
+              <option>Discord</option>
+              <option>Telegram</option>
+              <option>От знакомого</option>
+              <option>YouTube</option>
+              <option>Форумы</option>
+              <option>Другое</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label><i class="fas fa-user"></i> Расскажите о себе *</label>
+          <textarea id="appAbout" rows="4" placeholder="Ваш опыт, стиль игры, любимые занятия..." required></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label><i class="fas fa-camera"></i> Фото построек (до 5)</label>
+          <div class="photo-upload-area" id="appPhotoUpload">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <span>Нажмите или перетащите</span>
+            <small>Можно прикрепить скриншоты</small>
+          </div>
+          <input type="file" id="appPhotoInput" accept="image/*" multiple style="display:none;">
+          <div class="photo-preview-grid" id="appPhotoPreview"></div>
+        </div>
+        
+        <div class="form-group">
+          <label><i class="fas fa-question-circle"></i> Дополнительно</label>
+          <textarea id="appExtra" rows="3" placeholder="Вопросы или пожелания..."></textarea>
+        </div>
+        
+        <div class="form-notice">
+          <i class="fas fa-info-circle"></i>
+          <span>После отправки заявка будет рассмотрена в течение 48 часов. Первая неделя — бесплатный тест-драйв!</span>
+        </div>
+        
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary btn-lg">
+            <i class="fas fa-paper-plane"></i> Отправить заявку
+          </button>
+          <div class="form-message" id="appMessage"></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <i class="fas fa-cube"></i> AKSO<span>WORLD</span>
+    </div>
+    <div class="footer-copyright">
+      © 2025-2026 Akso World. Не официальный продукт Mojang.
+    </div>
+    <div class="footer-social" id="footerSocial"></div>
+  </div>
+</footer>
+
+<!-- ADMIN BUTTON -->
+<button class="admin-fab" id="adminFab" style="display: none;">
+  <i class="fas fa-cog"></i>
+</button>
+
+<script src="js/main.js"></script>
+</body>
+</html>
